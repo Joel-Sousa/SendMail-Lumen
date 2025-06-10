@@ -24,6 +24,9 @@ $app = new Laravel\Lumen\Application(
 );
 
 // $app->withFacades();
+$app->withFacades();
+// $app->configure('database');
+
 
 // $app->withEloquent();
 
@@ -58,8 +61,16 @@ $app->singleton(
 | the default version. You may register other files below as needed.
 |
 */
+$app->configure('mail');
+$app->alias('mail.manager', Illuminate\Mail\MailManager::class);
+$app->alias('mail.manager', Illuminate\Contracts\Mail\Factory::class);
+
+$app->alias('mailer', Illuminate\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\Mailer::class);
+$app->alias('mailer', Illuminate\Contracts\Mail\MailQueue::class);
 
 $app->configure('app');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +105,9 @@ $app->configure('app');
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+// $app->register(Illuminate\Redis\RedisServiceProvider::class);
+// class_alias(Illuminate\Support\Facades\Redis::class, 'Redis');
+$app->register(Illuminate\Mail\MailServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -111,5 +125,6 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
+
 
 return $app;
