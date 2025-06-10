@@ -2,12 +2,6 @@
 
 namespace App\Services;
 
-use App\Mail\DataMail;
-use App\Repositories\DataRepository;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Mail\Mailer;
-use App\Traits\MailTrait;
 use PHPMailer\PHPMailer\PHPMailer;
 use DateTime;
 use DateTimeZone;

@@ -20,13 +20,6 @@ $router->get('/', function () use ($router) {
     return view('index');
 });
 
-// $router->post('/send-mail', function () use ($router) {
-//     // return $router->app->version();
-//     return view('index');
-// })->name('save');
-
-
-
 $router->group(['prefix' => '/'], function() use ($router){
 
     $router->post('/send-mail', 'DataController@sendMail');

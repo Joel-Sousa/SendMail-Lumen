@@ -44,39 +44,39 @@ if (file_exists($logFile)) {
                             <form action="/send-mail" method='POST' enctype="multipart/form-data">
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='host'
-                                        placeholder="Host do correio *" value='{{ $data['host'] ?? '' }}'>
+                                        placeholder="Host do correio *" value='{{ $data['host'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='port'
-                                        placeholder="Porta do correio *" value='{{ $data['port'] ?? '' }}'>
+                                        placeholder="Porta do correio *" value='{{ $data['port'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='user'
-                                        placeholder="Usuario *" value='{{ $data['user'] ?? '' }}'>
+                                        placeholder="Usuario *" value='{{ $data['user'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='pass'
-                                        placeholder="Senha *" value='{{ $data['pass'] ?? '' }}'>
+                                        placeholder="Senha *" value='{{ $data['pass'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='encryption'
                                         placeholder="Criptografia *" value='{{ $data['encryption'] ?? 'tls' }}'
-                                        value='tls'>
+                                        value='tls' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search"
                                         name='originAddress' placeholder="Endereço de origem *"
-                                        value='{{ $data['originAddress'] ?? '' }}'>
+                                        value='{{ $data['originAddress'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search"
                                         name='destinationAddress' placeholder="Endereço de destino *"
-                                        value='{{ $data['destinationAddress'] ?? '' }}'>
+                                        value='{{ $data['destinationAddress'] ?? '' }}' required>
                                 </div>
                                 <div class=row>
                                     <input class="form-control me-sm-2 form-control-sm" type="search" name='subject'
                                         placeholder="Assunto" value='{{ $data['subject'] ?? 'Isso e um teste' }}'
-                                        value='Isso e um teste'>
+                                        value='Isso e um teste' required>
                                 </div>
                                 <div>
                                     <input type="file" name="file">

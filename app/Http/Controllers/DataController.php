@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\DataMail;
 use Illuminate\Http\Request;
 use App\Services\DataService;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 
 class DataController extends Controller
 {
@@ -29,7 +26,7 @@ class DataController extends Controller
     }
 
     public function cleanLog(){
-        
+
         $data =  $this->dataService->cleanLog();
 
         return view('index', compact('data'));
