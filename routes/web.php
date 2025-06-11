@@ -26,3 +26,7 @@ $router->group(['prefix' => '/'], function() use ($router){
     $router->post('/clean-log', 'DataController@cleanLog');
 
 });
+
+$router->get('/hello', function () {
+    return 'Lumen funcionando!';
+});
